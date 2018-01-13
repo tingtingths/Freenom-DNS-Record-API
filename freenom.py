@@ -65,9 +65,6 @@ def get_dns(cookies_jar, id, domain):
     )
     # print("status: {}, headers: {}, cookies: {}".format(r.status_code, r.headers, r.cookies))
 
-    with open("out.html", "w") as out:
-        out.write(r.text)
-
     soup = BeautifulSoup(r.text, "html.parser")
 
     if "loggedIn" not in soup.body["class"]:
